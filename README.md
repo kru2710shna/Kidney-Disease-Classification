@@ -79,3 +79,55 @@ The following libraries and frameworks are utilized in the Kidney Image Classifi
 - **Flask-CORS**: For handling Cross-Origin Resource Sharing in Flask.
 - **Gdown**: For downloading files from Google Drive.
 - **-e .**: For installing the package in editable mode.
+
+## Step 3: Packaging Script + Virtual Environment
+
+# Overview of `setup.py`
+
+The `setup.py` file is a script used for packaging the Kidney Image Classifier project as a Python package. It utilizes the `setuptools` library to define package metadata and configuration.
+
+## Usage
+To package the Kidney Image Classifier project, run this script. It prepares the package for distribution, making it easy to install and share.
+
+
+# Virtual Environment
+
+### 1. Install `virtualenv`
+If you don't have `virtualenv` installed, you can install it using pip:
+
+```bash
+pip install virtualenv
+```
+
+### 2. Create a Virtual Environment
+Navigate to your project directory and create a virtual environment by running:
+
+```bash
+cd path/to/your/project/directory
+virtualenv venv
+```
+
+### 3. Activate the Virtual Environment
+Activate the virtual environment using the following command:
+
+```bash
+source venv/bin/activate
+```
+
+### 4. Install Dependencies 
+After activating the virtual environment, install the required dependencies for the project. You can do this using the requirements.txt file 
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Deactivate
+When you are finished working, you can deactivate the virtual environment by running:
+
+```bash
+deactivate
+```
+
+
+
+
