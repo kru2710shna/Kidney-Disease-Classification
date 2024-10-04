@@ -1,42 +1,19 @@
-# Kidney Tumor
+# Kidney Image Classifier
 
-A kidney tumor is an abnormal growth of tissue in the kidneys. These tumors can be benign (non-cancerous) or malignant (cancerous). Understanding kidney tumors is essential for early diagnosis and effective treatment.
+## Step 1: Automated Python Folder and File Generator
 
-## Types of Kidney Tumors
+### Overview
+This step involves creating an automated script that generates a predefined folder structure and necessary files for the Kidney Image Classifier project. The script also incorporates logging to track the creation of directories and files.
 
-1. **Benign Tumors**
-   - **Angiomyolipoma**: Composed of blood vessels, muscle, and fat; often does not require treatment unless large.
-   - **Oncocytoma**: A rare tumor that is typically slow-growing and usually requires no treatment unless symptomatic.
+### Features
+- **Automated Folder and File Generation**: Automatically creates the required directories and files for the project.
+- **Logging**: Logs activities such as directory creation and file creation to provide insight into the script's operations.
 
-2. **Malignant Tumors**
-   - **Renal Cell Carcinoma (RCC)**: The most common type of kidney cancer in adults, often diagnosed in advanced stages.
-   - **Wilms Tumor**: A type of kidney cancer that primarily affects children, typically occurs in children aged 3 to 4 years.
-   - **Transitional Cell Carcinoma**: A cancer that can occur in the kidney and the urinary tract.
+### Project Template
+A project template is provided in the file named `template.py`. This template serves as a reference for structuring the Kidney Image Classifier project.
 
-## Symptoms
-
-Symptoms of kidney tumors may vary but can include:
-- Blood in urine (hematuria)
-- Persistent back pain or side pain
-- A lump in the abdomen or side
-- Unexplained weight loss
-- Fatigue
-
-## Diagnosis
-
-Diagnosing kidney tumors typically involves:
-- **Imaging Tests**: Ultrasound, CT scans, or MRIs to visualize the kidneys.
-- **Biopsy**: Taking a small tissue sample to determine whether a tumor is benign or malignant.
-
-## Treatment Options
-
-Treatment depends on the type and stage of the tumor:
-- **Surgery**: Often the first line of treatment for malignant tumors; may involve partial or complete removal of the kidney.
-- **Radiation Therapy**: May be used for tumors that cannot be surgically removed.
-- **Chemotherapy**: Usually employed for advanced cases of kidney cancer.
+### Usage
+To use the automated folder and file generator, run the script associated with this step. Ensure you have the necessary permissions to create directories and files on your system.
 
 ## Conclusion
-
-Kidney tumors require prompt medical attention for proper diagnosis and treatment. Regular check-ups and imaging can help in early detection, improving the chances of successful treatment.
-
-
+The automated folder and file generator simplifies the initial setup of the Kidney Image Classifier project, allowing developers to focus on implementation rather than project structure.
