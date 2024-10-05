@@ -80,7 +80,7 @@ The following libraries and frameworks are utilized in the Kidney Image Classifi
 - **Gdown**: For downloading files from Google Drive.
 - **-e .**: For installing the package in editable mode.
 
-## Step 3: Packaging Script + Virtual Environment
+## Step 3: Packaging Script + Virtual Environment + Logging + Exception Hnadling 
 
 # Overview of `setup.py`
 
@@ -93,14 +93,14 @@ To package the Kidney Image Classifier project, run this script. It prepares the
 # Virtual Environment
 
 ### 1. Install `virtualenv`
-If you don't have `virtualenv` installed, you can install it using pip:
+If you don't have `virtualenv` installed, you can install it using pip
 
 ```bash
 pip install virtualenv
 ```
 
 ### 2. Create a Virtual Environment
-Navigate to your project directory and create a virtual environment by running:
+Navigate to your project directory and create a virtual environment by running
 
 ```bash
 cd path/to/your/project/directory
@@ -108,7 +108,7 @@ virtualenv venv
 ```
 
 ### 3. Activate the Virtual Environment
-Activate the virtual environment using the following command:
+Activate the virtual environment using the following command
 
 ```bash
 source venv/bin/activate
@@ -122,10 +122,40 @@ pip install -r requirements.txt
 ```
 
 ### 4. Deactivate
-When you are finished working, you can deactivate the virtual environment by running:
+When you are finished working, you can deactivate the virtual environment by running
 
 ```bash
 deactivate
+```
+
+## Set Up Logging
+Logging is crucial for tracking the behavior of your application and troubleshooting issues. To enable logging in your Python project, you can use Python's built-in logging module.
+
+```bash
+import logging
+
+logging.basicConfig(level=logging.INFO, format='[%(asctime)s]: %(message)s')
+
+logging.info("Virtual environment is successfully set up and activated.")
+```
+
+##  Implement Error Handling
+Proper error handling helps prevent crashes and improves debugging. Below is an example of how to implement basic exception handling in Python
+
+```bash
+try:
+    # Code that might cause an exception
+    logging.info("Attempting to install dependencies.")
+    # Example: Install a package
+    import some_nonexistent_package
+except ImportError as e:
+    logging.error(f"Error occurred: {e}")
+except Exception as e:
+    logging.error(f"An unexpected error occurred: {e}")
+else:
+    logging.info("Dependencies installed successfully.")
+finally:
+    logging.info("Script execution completed.")
 ```
 
 
