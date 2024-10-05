@@ -4,6 +4,8 @@ from Kidney_Image_Classifier.utils.overlapping import read_yaml, create_director
 from Kidney_Image_Classifier.entity.config_entity import DataIngestionConfig
 
 
+# class manages reading configuration files and provides configuration objects for different
+# components of the pipeline.
 class ConfigurationManager:
     def __init__(
         self,
@@ -16,7 +18,7 @@ class ConfigurationManager:
         create_directories([self.config.artifacts_root])
 
 
-    
+    # extracts the data ingestion configuration from the loaded self.config.
     def get_data_ingestion_config(self) -> DataIngestionConfig:
         config = self.config.data_ingestion
 
