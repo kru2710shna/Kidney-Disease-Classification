@@ -1,4 +1,4 @@
-# Kidney Image Classifier
+# Kidney-Tumor Image Classification 
 
 # Kidney Tumor
 
