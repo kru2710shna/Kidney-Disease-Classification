@@ -1,4 +1,4 @@
-# Kidney Image Classifier
+# Kidney-Tumor Image Classification 
 
 # Kidney Tumor
 
@@ -159,5 +159,30 @@ finally:
 ```
 
 
+# End-to-End Data Pipeline Summary - Step-1 For the Project
 
+## Step-1.1 Updating Configuration
 
+We started by updating the config/config.yaml file to define the paths and configurations for each pipeline stages.
+
+This is a configuration file, typically in YAML format, used for defining paths, URLs, and parameters for different stages of an end-to-end data pipeline. It centralizes the configurations so the code can easily reference these settings, which is important in projects following MLOps practices. Each section specifies settings related to different parts of the pipeline: Data Ingestion, Base Model Preparation, and Model Training.
+
+Reason: Centralized configuration management enables easy parameterization and changes, making the pipeline more adaptable.
+
+## Step-1.2 Updating params.yaml
+
+The params.yaml file allows us to store hyperparameters or other configuration values, promoting modular and reusable code.
+
+## Step-1.3 Defining Entity Class (config_entity.py)
+Entities represent standardized inputs for pipeline stages.
+
+The DataIngestionConfig class is a configuration object used in the data ingestion phase of a pipeline. It holds essential paths and URLs related to data ingestion, including where the data is stored, where it is downloaded from, and where it will be extracted. By using a data class, this configuration is structured and immutable, making it easy to pass around and use throughout the pipeline without risk of modification. This ensures that the data ingestion stage is well-configured and organized.
+
+## Step-1.4 Configuration Manager (configuration.py)
+
+The configuration manager handles the reading of YAML files and directory creation. It encapsulates how configuration is fetched and allows different pipeline components to access configuration details easily.
+
+## Step-1.5 Data Ingestion Component (components/data_ingestion.py)
+Components execute the actions based on configuration inputs, forming the backbone of the end-to-end pipeline.
+
+In MLOps, components are individual units of the pipeline that execute specific tasks like data ingestion, model training, or evaluation. Unlike configurations, components are responsible for executing actions based on configurations provided by the manager.
