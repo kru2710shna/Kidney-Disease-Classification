@@ -50,7 +50,7 @@
                     contentType: 'application/json',
                     data: JSON.stringify({ image: image }),
                     success: function (response) {
-                        $('#result').html('<h4>Prediction Result:</h4><p>' + response.result + '</p>');
+                        $('#result').html('<h4>Prediction Result:</h4><p>' + response[0].image + '</p>');
                     },
                     error: function (error) {
                         $('#result').html('<h4>Error:</h4><p>Could not classify the image.</p>');
