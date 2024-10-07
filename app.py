@@ -30,8 +30,8 @@ def home():
 @app.route("/train", methods=['GET','POST'])
 @cross_origin()
 def trainRoute():
-    # os.system("python main.py")
-    os.system("dvc repro")
+    os.system("python main.py")
+    # os.system("dvc repro")
     return "Training done successfully!"
 
 
@@ -42,7 +42,7 @@ def predictRoute():
     image = request.json['image']
     decodeImage(image, clApp.filename)
     result = clApp.classifier.predict()
-    return jsonify({'result': result})
+    return jsonify(result)
 
 
 if __name__ == "__main__":

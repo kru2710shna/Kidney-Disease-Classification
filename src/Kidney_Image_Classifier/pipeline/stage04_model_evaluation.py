@@ -1,4 +1,4 @@
-from cnnClassifier.config.configuration import ConfigurationManager
+from Kidney_Image_Classifier.config.configuration import ConfigurationManager
 from Kidney_Image_Classifier.components.model_evaluation_mlflow import Evaluation
 from cnnClassifier import logger
 

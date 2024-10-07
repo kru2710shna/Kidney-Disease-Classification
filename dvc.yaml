@@ -1,16 +1,16 @@
 stages:
   data_ingestion:
-    cmd: python src/cnnClassifier/pipeline/stage01_data_ingestion.py
+    cmd: python src/Kidney_Image_Classifier/pipeline/stage01_data_ingestion.py
     deps:
-      - src/cnnClassifier/pipeline/stage01_data_ingestion.py
+      - src/Kidney_Image_Classifier/pipeline/stage01_data_ingestion.py
       - config/config.yaml
     outs:
       - artifacts/data_ingestion/Kidney_Image_Classification_Data
 
   prepare_base_model:
-    cmd: python src/cnnClassifier/pipeline/stage02_prepare_base_model.py
+    cmd: python src/Kidney_Image_Classifier/pipeline/stage02_prepare_base_model.py
     deps:
-      - src/cnnClassifier/pipeline/stage02_prepare_base_model.py
+      - src/Kidney_Image_Classifier/pipeline/stage02_prepare_base_model.py
       - config/config.yaml
     params:
       - IMAGE_SIZE
@@ -23,9 +23,9 @@ stages:
 
 
   training:
-    cmd: python src/cnnClassifier/pipeline/stage03_model_training.py
+    cmd: python src/Kidney_Image_Classifier/pipeline/stage03_model_training.py
     deps:
-      - src/cnnClassifier/pipeline/stage03_model_training.py
+      - src/Kidney_Image_Classifier/pipeline/stage03_model_training.py
       - config/config.yaml
       - artifacts/data_ingestion/Kidney_Image_Classification_Data
       - artifacts/prepare_base_model
@@ -39,9 +39,9 @@ stages:
 
 
   evaluation:
-    cmd: python src/cnnClassifier/pipeline/stage04_model_evaluation.py
+    cmd: python src/Kidney_Image_Classifier/pipeline/stage04_model_evaluation.py
     deps:
-      - src/cnnClassifier/pipeline/stage04_model_evaluation.py
+      - src/Kidney_Image_Classifier/pipeline/stage04_model_evaluation.py
       - config/config.yaml
       - artifacts/data_ingestion/Kidney_Image_Classification_Data
       - artifacts/training/model.h5

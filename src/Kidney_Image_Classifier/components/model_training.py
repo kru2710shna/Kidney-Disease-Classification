@@ -5,7 +5,7 @@ import tensorflow as tf
 import time
 from pathlib import Path
 from Kidney_Image_Classifier.entity.config_entity import TrainingConfig
-
+from tensorflow.keras.optimizers import Adam
 
 class Training:
     def __init__(self, config: TrainingConfig):
@@ -13,9 +13,13 @@ class Training:
 
     
     def get_base_model(self):
-        self.model = tf.keras.models.load_model(
-            self.config.updated_base_model_path
-        )
+        # Load the model
+        self.model = tf.keras.models.load_model(self.config.updated_base_model_path)
+
+        # Recompile the model with a new optimizer
+        self.model.compile(optimizer=Adam(learning_rate=0.001),  # Adjust the learning rate as necessary
+                           loss='binary_crossentropy',  # Update this based on your loss function
+                           metrics=['accuracy'])
 
     def train_valid_generator(self):
 
@@ -66,9 +70,6 @@ class Training:
     def save_model(path: Path, model: tf.keras.Model):
         model.save(path)
 
-
-
-    
     def train(self):
         self.steps_per_epoch = self.train_generator.samples // self.train_generator.batch_size
         self.validation_steps = self.valid_generator.samples // self.valid_generator.batch_size
