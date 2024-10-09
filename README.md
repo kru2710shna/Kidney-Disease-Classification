@@ -186,5 +186,8 @@ The configuration manager handles the reading of YAML files and directory creati
 Components execute the actions based on configuration inputs, forming the backbone of the end-to-end pipeline.
 
 In MLOps, components are individual units of the pipeline that execute specific tasks like data ingestion, model training, or evaluation. Unlike configurations, components are responsible for executing actions based on configurations provided by the manager.
+<<<<<<< HEAD
 
 ...
+=======
+>>>>>>> fbc8a294fd7e9d1a6f1bf0281d2b3ac9b351e3f5
