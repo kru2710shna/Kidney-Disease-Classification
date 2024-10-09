@@ -1,5 +1,5 @@
-# Track all .h5 files with LFS
-*.h5 filter=lfs diff=lfs merge=lfs -text
+# # Track all .h5 files with LFS
+# *.h5 filter=lfs diff=lfs merge=lfs -text
 
-# Track all .zip files with LFS
-*.zip filter=lfs diff=lfs merge=lfs -text
+# # Track all .zip files with LFS
+# *.zip filter=lfs diff=lfs merge=lfs -text
