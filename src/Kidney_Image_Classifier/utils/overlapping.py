@@ -10,11 +10,6 @@ from pathlib import Path
 from typing import Any
 import base64
 
-
-<<<<<<< HEAD
-
-=======
->>>>>>> fbc8a294fd7e9d1a6f1bf0281d2b3ac9b351e3f5
 @ensure_annotations
 def read_yaml(path_to_yaml: Path) -> ConfigBox:
     """reads yaml file and returns
