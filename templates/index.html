@@ -15,17 +15,42 @@
         .result {
             margin-top: 20px;
         }
+        .dark-mode {
+            background-color: #343a40;
+            color: white;
+        }
+        .light-mode {
+            background-color: #f8f9fa;
+            color: black;
+        }
+        #imagePreview {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+            border: 2px solid #ddd;
+            padding: 10px;
+        }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1 class="text-center">Kidney Tumor Classification</h1>
-    <p class="text-center">Upload an image of a kidney scan to classify tumor presence.</p>
+<div class="container text-center">
+    <h1>Kidney Tumor Classification</h1>
+    <p>Upload an image of a kidney scan to classify tumor presence.</p>
 
-    <div class="text-center">
+    <div class="form-group">
         <input type="file" id="imageUpload" class="form-control-file" accept="image/*">
-        <button id="uploadBtn" class="btn btn-primary mt-3">Upload Image</button>
+    </div>
+
+    <button id="uploadBtn" class="btn btn-primary mt-3">Upload Image</button>
+    <button id="toggleModeBtn" class="btn btn-secondary mt-3">Toggle Dark Mode</button>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div id="imagePreviewContainer">
+                <img id="imagePreview" src="#" alt="Uploaded Image Preview" style="display:none;" />
+            </div>
+        </div>
     </div>
 
     <div id="result" class="result text-center"></div>
@@ -34,6 +59,8 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script>
     $(document).ready(function () {
+        let isDarkMode = false;
+
         $('#uploadBtn').click(function () {
             var file = $('#imageUpload').prop('files')[0];
             if (!file) {
@@ -41,7 +68,13 @@
                 return;
             }
 
+            // Display uploaded image preview
             var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#imagePreview').attr('src', e.target.result).show();
+            };
+            reader.readAsDataURL(file);
+
             reader.onloadend = function () {
                 var image = reader.result.split(',')[1];  // Get base64 string
                 $.ajax({
@@ -57,8 +90,18 @@
                     }
                 });
             };
+        });
 
-            reader.readAsDataURL(file); // Read the file as a data URL
+        // Toggle dark mode
+        $('#toggleModeBtn').click(function () {
+            isDarkMode = !isDarkMode;
+            if (isDarkMode) {
+                $('body').removeClass('light-mode').addClass('dark-mode');
+                $('#toggleModeBtn').text('Toggle Light Mode');
+            } else {
+                $('body').removeClass('dark-mode').addClass('light-mode');
+                $('#toggleModeBtn').text('Toggle Dark Mode');
+            }
         });
     });
 </script>
