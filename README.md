@@ -159,13 +159,15 @@ finally:
 ```
 
 ### 5. Run the Pipeline 
-'''bash
+```bash
 dvc repro
-'''
+```
 
 ### 6. Run Flask App
-bash
+
+```bash
 python app.py
+```
 
 # End-to-End Data Pipeline Summary - Step-1 For the Project
 
