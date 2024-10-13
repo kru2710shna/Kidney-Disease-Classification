@@ -200,11 +200,20 @@ In MLOps, components are individual units of the pipeline that execute specific 
 ### Step 1.6: Preparing a Base Model
 It initializes a configuration manager to retrieve model preparation settings, then creates an instance of the `PrepareBaseModel` class to obtain and update the base model.
 
+![Model Architecture]('/Users/krushna/Desktop/Screenshot 2024-10-12 at 10.02.50 PM.png')
+
+
 ### Step 1.7: Training Pipeline
 This code implements a training pipeline for a kidney image classifier, initializing a `ConfigurationManager` to fetch the training configuration.
 
+![Model CICD]('/Users/krushna/Desktop/Screenshot 2024-10-12 at 12.20.36 PM.png')
+
 ### Step 1.8: Evaluation Pipeline
 This code defines an evaluation pipeline for a kidney image classifier, executing the evaluation process, saving the evaluation score, and including a commented-out line for logging results to MLflow.
+
+
+![DVC Pipeline]('/Users/krushna/Desktop/Screenshot 2024-10-12 at 12.31.35 PM.png')
+
 
 ## DVC Configuration
 The `dvc.yaml` file defines a multi-stage pipeline for a kidney image classification project, specifying the commands to execute, dependencies, parameters, and outputs for each stage.
