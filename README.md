@@ -158,6 +158,16 @@ finally:
     logging.info("Script execution completed.")
 ```
 
+### 5. Run the Pipeline 
+```bash
+dvc repro
+```
+
+### 6. Run Flask App
+
+```bash
+python app.py
+```
 
 # End-to-End Data Pipeline Summary - Step-1 For the Project
 
@@ -186,8 +196,23 @@ The configuration manager handles the reading of YAML files and directory creati
 Components execute the actions based on configuration inputs, forming the backbone of the end-to-end pipeline.
 
 In MLOps, components are individual units of the pipeline that execute specific tasks like data ingestion, model training, or evaluation. Unlike configurations, components are responsible for executing actions based on configurations provided by the manager.
-<<<<<<< HEAD
 
-...
-=======
->>>>>>> fbc8a294fd7e9d1a6f1bf0281d2b3ac9b351e3f5
+### Step 1.6: Preparing a Base Model
+It initializes a configuration manager to retrieve model preparation settings, then creates an instance of the `PrepareBaseModel` class to obtain and update the base model.
+
+### Step 1.7: Training Pipeline
+This code implements a training pipeline for a kidney image classifier, initializing a `ConfigurationManager` to fetch the training configuration.
+
+### Step 1.8: Evaluation Pipeline
+This code defines an evaluation pipeline for a kidney image classifier, executing the evaluation process, saving the evaluation score, and including a commented-out line for logging results to MLflow.
+
+## DVC Configuration
+The `dvc.yaml` file defines a multi-stage pipeline for a kidney image classification project, specifying the commands to execute, dependencies, parameters, and outputs for each stage.
+
+## Flask App
+This Flask application provides a web interface for a kidney image classification project. It includes:
+- A home route that renders an HTML template.
+- A training route that triggers the model training process.
+- A prediction route that accepts an image, decodes it, and returns classification results as JSON.
+
+## Thanks 
