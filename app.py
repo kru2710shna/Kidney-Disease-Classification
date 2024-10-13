@@ -25,8 +25,6 @@ def home():
     return render_template('index.html')
 
 
-
-
 @app.route("/train", methods=['GET','POST'])
 @cross_origin()
 def trainRoute():
