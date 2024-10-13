@@ -45,6 +45,10 @@
     <button id="uploadBtn" class="btn btn-primary mt-3">Upload Image</button>
     <button id="toggleModeBtn" class="btn btn-secondary mt-3">Toggle Dark Mode</button>
 
+    <!-- New button for Testing Images -->
+    <button id="testingImagesBtn" class="btn btn-info mt-3">Testing Images</button>
+    <p class="mt-2">More Testing Images.</p>
+
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div id="imagePreviewContainer">
@@ -102,6 +106,11 @@
                 $('body').removeClass('dark-mode').addClass('light-mode');
                 $('#toggleModeBtn').text('Toggle Dark Mode');
             }
+        });
+
+        // Redirect to Google Drive for Testing Images
+        $('#testingImagesBtn').click(function () {
+            window.location.href = 'https://drive.google.com/drive/folders/13-uyZ1c3nl1qTG2q-QVIMuNGWv24gTgc?usp=sharing';
         });
     });
 </script>
