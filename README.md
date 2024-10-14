@@ -80,6 +80,23 @@ The following libraries and frameworks are utilized in the Kidney Image Classifi
 - **Gdown**: For downloading files from Google Drive.
 - **-e .**: For installing the package in editable mode.
 
+## Transfer Learning
+
+VGG16 is a convolutional neural network (CNN) model that is used to classify images: 
+
+Layers: VGG16 is a 16-layer deep network that consists of 13 convolution layers and three fully connected layers 
+
+Image size: The input image size for VGG16 is 224-by-224 
+
+Training: VGG16 was trained on the ImageNet database, which contains over 14 million images from almost 1000 classes 
+
+Accuracy: VGG16 can achieve almost 92.7% top-5 test accuracy on ImageNet 
+
+Model name: VGG stands for Visual Geometry Group, which is the name of the University of Oxford group that developed the model 
+
+Parameters: VGG16 has about 138 million parameters 
+
+
 ## Step 3: Packaging Script + Virtual Environment + Logging + Exception Hnadling 
 
 # Overview of `setup.py`
